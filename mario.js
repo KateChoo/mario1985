@@ -1,6 +1,5 @@
 const width = 10
 const grid = document.querySelector('.grid')
-//const scoreDisplay = document.getElementById('score')
 let squares = []
 
 // 0 - red
