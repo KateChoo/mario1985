@@ -36,10 +36,10 @@ const xmasEmoji = [
     // '👪',
 ]
 
-const xmasBlessing = [
-    //'url(https://cdn.pixabay.com/photo/2020/11/23/03/55/snowflakes-5768630_1280.jpg)',
-    'Merry Xmas', '', '', '', '', '', '', '','Happy', '', '', '', '', '', '', '', '','2021'
-]
+// const xmasBlessing = [
+//     //'url(https://cdn.pixabay.com/photo/2020/11/23/03/55/snowflakes-5768630_1280.jpg)',
+//     'Merry Xmas', '', '', '', '', '', '', '','Happy', '', '', '', '', '', '', '', '','2021'
+// ]
 
 function createBoard() {
     for (let i = 0; i < layout.length; i++) {
@@ -85,23 +85,6 @@ function marioColorChange(e){
     // }
 }
 
-function marioColorChange2(e){
-    if(e.target.className === 'blue'){
-        e.target.classList.remove('blue')
-        e.target.classList.add('green')
-
-        //let randomEmoji = Math.floor(Math.random() * xmasEmoji.length);
-        //e.target.textContent = xmasEmoji[randomEmoji];
-    } else if (e.target.className === 'background_color'){
-        // //let randomBlessing = Math.floor(Math.random() * xmasBlessing.length);
-        // //e.target.textContent = xmasBlessing[randomBlessing];
-        // e.target.classList.remove('background_color')
-        // e.target.classList.add('change_background')
-        // let randomEmoji = Math.floor(Math.random() * xmasEmoji.length);
-        // e.target.textContent = xmasEmoji[randomEmoji];        
-    }
-}
-
-document.addEventListener('mouseover', marioColorChange, marioColorChange2)
+document.addEventListener('mouseover', marioColorChange)
 
 
