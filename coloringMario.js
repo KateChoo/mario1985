@@ -105,15 +105,3 @@ function marioColorChange2(e){
 document.addEventListener('mouseover', marioColorChange, marioColorChange2)
 
 
-
-//interesting coloring
-// function marioColorChange(e){
-//     console.log(e.target)
-//     if(e.target.className === 'red'){
-//         e.target.classList.remove('red')
-//         e.target.classList.add('blue')
-//     }else{
-//         e.target.classList.add('red')
-//         e.target.classList.remove('blue')
-//     }
-// }
