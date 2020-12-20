@@ -1,38 +1,40 @@
 const width = 10
 const grid = document.querySelector('.grid')
+//const scoreDisplay = document.getElementById('score')
 let squares = []
 
-// 0 - red
+// 0 - hat
 // 1 - background_color
-// 2 - gold
+// 2 - hair
 // 3 - skin
 // 4 - empty
-
+//layout 20*20
 const layout = [
-1, 1, 4, 4, 4, 4, 0, 0, 0, 0, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4,  
-1, 1, 4, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 4, 4, 
-1, 1, 4, 4, 4, 2, 2, 2, 2, 3, 3, 2, 3, 4, 4, 4, 4, 4, 4, 4,  
-1, 1, 4, 4, 2, 2, 3, 2, 3, 3, 3, 2, 3, 3, 3, 4, 4, 4, 4, 4,  
-1, 1, 4, 4, 2, 2, 3, 2, 2, 3, 3, 3, 2, 3, 3, 3, 4, 4, 4, 4,  
-1, 1, 4, 4, 2, 2, 2, 3, 3, 3, 3, 2, 2, 2, 2, 4, 4, 4, 4, 4,  
-1, 1, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4,  
-1, 1, 4, 4, 4, 2, 2, 2, 0, 2, 2, 2, 4, 4, 4, 4, 4, 4, 4, 4,  
-1, 1, 4, 4, 2, 2, 2, 2, 0, 2, 2, 0, 2, 2, 2, 4, 4, 4, 4, 4, 
-1, 1, 4, 2, 2, 2, 2, 2, 0, 0, 0, 0, 2, 2, 2, 2, 4, 4, 4, 4,  
-1, 1, 4, 3, 3, 3, 2, 0, 3, 0, 0, 3, 0, 2, 3, 3, 4, 4, 4, 4,  
-1, 1, 4, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 3, 3, 3, 4, 4, 4, 4,  
-1, 1, 4, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 4, 4, 4, 4,  
-1, 1, 4, 4, 4, 0, 0, 0, 0, 4, 0, 0, 0, 0, 4, 4, 4, 4, 4, 4,  
-1, 1, 4, 4, 2, 2, 2, 2, 4, 4, 4, 2, 2, 2, 2, 4, 4, 4, 4, 4,
-1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,   
-1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,  
-1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,  
-1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,  
-1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4  
+1, 1, 4, 4, 4, 4, 0, 0, 0, 0, 0, 0, 4, 4, 4, 4, 4, 4, 1, 1,  
+1, 1, 4, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 1, 1, 
+1, 1, 4, 4, 4, 2, 2, 2, 2, 3, 3, 2, 3, 4, 4, 4, 4, 4, 1, 1,  
+1, 1, 4, 4, 2, 2, 3, 2, 3, 3, 3, 2, 3, 3, 3, 4, 4, 4, 1, 1,  
+1, 1, 4, 4, 2, 2, 3, 2, 2, 3, 3, 3, 2, 3, 3, 3, 4, 4, 1, 1,  
+1, 1, 4, 4, 2, 2, 2, 3, 3, 3, 3, 2, 2, 2, 2, 4, 4, 4, 1, 1,  
+1, 1, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 1, 1,  
+1, 1, 4, 4, 4, 2, 2, 2, 0, 2, 2, 2, 4, 4, 4, 4, 4, 4, 1, 1,  
+1, 1, 4, 4, 2, 2, 2, 2, 0, 2, 2, 0, 2, 2, 2, 4, 4, 4, 1, 1, 
+1, 1, 4, 2, 2, 2, 2, 2, 0, 0, 0, 0, 2, 2, 2, 2, 4, 4, 1, 1,  
+1, 1, 4, 3, 3, 3, 2, 0, 3, 0, 0, 3, 0, 2, 3, 3, 4, 4, 1, 1,  
+1, 1, 4, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 3, 3, 3, 4, 4, 1, 1,  
+1, 1, 4, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 4, 4, 1, 1,  
+1, 1, 4, 4, 4, 0, 0, 0, 0, 4, 0, 0, 0, 0, 4, 4, 4, 4, 1, 1,  
+1, 1, 4, 4, 2, 2, 2, 2, 4, 4, 4, 2, 2, 2, 2, 4, 4, 4, 1, 1,
+1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1,   
+1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1,  
+1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1,  
+1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1,  
+1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1  
 ]
 
 const xmasEmoji = [
-    '🎅', '❄️', '🎁', '🦌', '⛄', '👪', '🎄',
+    '🎅', '❄️', '🎁', '🦌', '⛄', '🎄',
+    // '👪'
 ]
 
 const xmasBlessing = [
@@ -40,83 +42,42 @@ const xmasBlessing = [
     'Merry Xmas', '', '', '', '', '', '', '','Happy', '', '', '', '', '', '', '', '','2021'
 ]
 
-
 function createBoard() { 
     for (let i = 0; i < layout.length; i++) {
         const square = document.createElement('div')
+        square.classList.add('hide')
         grid.appendChild(square)
         squares.push(square)
 
         if (layout[i] === 1) {
+            squares[i].classList.remove('hide')
             squares[i].classList.add('background_color')
         } else if (layout[i] === 2){
-            squares[i].classList.add('gold')
+            squares[i].classList.add('green_hair')
         } else if (layout[i] === 3){
+            squares[i].classList.remove('hide')
             squares[i].classList.add('skin')
         } else if (layout[i] === 0){
-            squares[i].classList.add('red')
+            squares[i].classList.add('hat')  
         }     
     }
 }
 createBoard()
 
-function marioColorChange(e){
-    //console.log(e.target)
-    if(e.target.className === 'red'){
-        e.target.classList.remove('red')
-        e.target.classList.add('blue')
 
-        //let randomEmoji = Math.floor(Math.random() * xmasEmoji.length);
-        //e.target.textContent = xmasEmoji[randomEmoji];
-    } else if (e.target.className === 'background_color'){
-        //let randomBlessing = Math.floor(Math.random() * xmasBlessing.length);
-        //e.target.textContent = xmasBlessing[randomBlessing];
-        e.target.classList.remove('background_color')
+function marioColorChange(e){
+    console.log(e.target)
+    if(
+        e.target.classList.contains('hat') ||
+        e.target.classList.contains('skin')||
+        e.target.classList.contains('green_hair')
+    ){
+        e.target.classList.remove('hide')
+    }else if (e.target.classList.contains('background_color')){
+        //console.log()
         e.target.classList.add('change_background')
         let randomEmoji = Math.floor(Math.random() * xmasEmoji.length);
         e.target.textContent = xmasEmoji[randomEmoji];
-        // for (let i = 0; i < xmasBlessing.length; ++i){
-        //     console.log(i)
-        //     e.target.style.backgroundImage = xmasBlessing[i];
-            
-        // }
-        // xmasBlessing.forEach(index =>
-        //     e.target.textContent = xmasBlessing[index] 
-        //     //console.log(e.target.textContent = xmasBlessing[index])
-        // )
-        
     }
 }
-
-function marioColorChange2(e){
-    if(e.target.className === 'blue'){
-        e.target.classList.remove('blue')
-        e.target.classList.add('green')
-
-        //let randomEmoji = Math.floor(Math.random() * xmasEmoji.length);
-        //e.target.textContent = xmasEmoji[randomEmoji];
-    } else if (e.target.className === 'background_color'){
-        // //let randomBlessing = Math.floor(Math.random() * xmasBlessing.length);
-        // //e.target.textContent = xmasBlessing[randomBlessing];
-        // e.target.classList.remove('background_color')
-        // e.target.classList.add('change_background')
-        // let randomEmoji = Math.floor(Math.random() * xmasEmoji.length);
-        // e.target.textContent = xmasEmoji[randomEmoji];        
-    }
-}
-
-document.addEventListener('mouseover', marioColorChange, marioColorChange2)
-
-
-
-//interesting coloring
-// function marioColorChange(e){
-//     console.log(e.target)
-//     if(e.target.className === 'red'){
-//         e.target.classList.remove('red')
-//         e.target.classList.add('blue')
-//     }else{
-//         e.target.classList.add('red')
-//         e.target.classList.remove('blue')
-//     }
-// }
+document.addEventListener('mouseover', marioColorChange)
