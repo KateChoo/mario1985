@@ -15,6 +15,7 @@ html, body {
     height: 1000px;
     /* border: solid black; */
     /* margin: 0 auto; */
+    margin-right: 5px;
 }
 
 .grid div {
