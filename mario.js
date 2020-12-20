@@ -33,7 +33,7 @@ const layout = [
 ]
 
 const xmasEmoji = [
-    '🎅', '❄️', '🎁', '🦌', '⛄', '🎄',
+    '🎅', '❄️', '🎁', '🦌', '⛄', '🎄','Merry', 'Xmas'
     // '👪'
 ]
 
@@ -65,7 +65,7 @@ function createBoard() {
 createBoard()
 
 
-function marioColorChange(e){
+function coloring(e){
     console.log(e.target)
     if(
         e.target.classList.contains('hat') ||
@@ -80,4 +80,8 @@ function marioColorChange(e){
         e.target.textContent = xmasEmoji[randomEmoji];
     }
 }
-document.addEventListener('mouseover', marioColorChange)
+// function merryxmas(){
+//     alert('merry xmas')
+// }
+document.addEventListener('mouseover', coloring)
+//setTimeout(merryxmas, 1000)
