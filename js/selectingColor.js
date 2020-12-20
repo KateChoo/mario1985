@@ -2,6 +2,7 @@ const width = 10
 const grid = document.querySelector('.grid')
 //const scoreDisplay = document.getElementById('score')
 let squares = []
+const colorList = document.querySelector('#colorList')
 
 // 0 - hat
 // 1 - background_color
@@ -42,7 +43,35 @@ const xmasBlessing = [
     'Merry Xmas', '', '', '', '', '', '', '','Happy', '', '', '', '', '', '', '', '','2021'
 ]
 
+//how to connect createColorValue to layout
+// function createColorValue(){
+//     for(let i = 0; i < 3; i++){
+//       let options = document.createElement('option')
+//       //options.setAttribute('value',color)
+//       options.setAttribute('class', i)
+//       colorList.appendChild(options)
+//       //console.log(options)
+//       //colorBg.style.backgroundColor = options.value
+//       if(options.className === '0'){
+//         options.setAttribute('value','red')
+//         options.textContent = 'Red'
+//         //console.log(options)
+//       }else if(options.className === '1'){
+//         options.setAttribute('value','green')
+//         options.textContent = 'Green'
+//         //console.log(options)
+//       }else if(options.className === '2'){
+//         options.setAttribute('value','blue')
+//         options.textContent = 'Blue'
+//         //console.log(options.value)
+//       }
+//     }
+//   }
+  
+//   createColorValue()
+
 function createBoard() { 
+    
     for (let i = 0; i < layout.length; i++) {
         const square = document.createElement('div')
         square.classList.add('hide')
@@ -53,7 +82,9 @@ function createBoard() {
             squares[i].classList.remove('hide')
             squares[i].classList.add('background_color')
         } else if (layout[i] === 2){
-            squares[i].classList.add('green_hair')
+            //squares[i].style.backgroundColor = colorList.value
+            squares[i].classList.add('green')
+            console.log(squares[i])
         } else if (layout[i] === 3){
             squares[i].classList.remove('hide')
             squares[i].classList.add('skin')
@@ -66,11 +97,11 @@ createBoard()
 
 
 function coloring(e){
-    console.log(e.target)
+    //console.log(e.target)
     if(
         e.target.classList.contains('hat') ||
         e.target.classList.contains('skin')||
-        e.target.classList.contains('green_hair')
+        e.target.classList.contains('green')
     ){
         e.target.classList.remove('hide')
     }else if (e.target.classList.contains('background_color')){
