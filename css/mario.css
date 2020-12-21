@@ -53,7 +53,7 @@ html, body {
     background: green;
 }
 .change_background {
-    background: rgb(0, 0, 0);
+    background: rgb(1, 40, 165);
 }
 @media screen and (min-width: 1200px){
     .grid {
