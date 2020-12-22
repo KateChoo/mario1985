@@ -67,7 +67,7 @@ h5:hover{
 .hint{
     font-weight: 900;
     animation:hint .75s 5;
-    font-size: 3rem;
+    /* font-size: 3rem; */
 }
 @keyframes hint{
     from, to { color: transparent }
@@ -86,13 +86,13 @@ h5:hover{
 }
 @media screen and (min-width: 800px) and (max-width: 1200px){
     .grid {
-        width: 850px;
-        height: 850px;
+        width: 800px;
+        height: 800px;
     }
 
     .grid div {
-        width:  42.5px;
-        height: 42.5px;  
+        width:  40px;
+        height: 40px;  
     }
 }
 
@@ -132,7 +132,7 @@ h5:hover{
     p{
         margin-left: 3rem;
     }
-    .hint{
+    /* .hint{
         display: none;
-    }
+    } */
 }
