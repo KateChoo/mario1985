@@ -34,7 +34,6 @@ const layout = [
 
 const xmasEmoji = [
     '🎅', '❄️', '🎁', '🦌', '⛄', '🎄','Merry', 'Xmas'
-    // '👪'
 ]
 
 const xmasBlessing = [
@@ -56,9 +55,9 @@ function createBoard() {
             squares[i].classList.add('green')
         } else if (layout[i] === 3){
             squares[i].classList.remove('hide')
-            squares[i].classList.add('skin')
+            squares[i].classList.add('yellow')
         } else if (layout[i] === 0){
-            squares[i].classList.add('hat')  
+            squares[i].classList.add('red')  
         }     
     }
 }
@@ -68,8 +67,8 @@ createBoard()
 function coloring(e){
     console.log(e.target)
     if(
-        e.target.classList.contains('hat') ||
-        e.target.classList.contains('skin')||
+        e.target.classList.contains('red') ||
+        e.target.classList.contains('yellow')||
         e.target.classList.contains('green')
     ){
         e.target.classList.remove('hide')

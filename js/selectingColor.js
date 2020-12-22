@@ -77,30 +77,29 @@ function createBoard() {
         square.classList.add('hide')
         grid.appendChild(square)
         squares.push(square)
-
         if (layout[i] === 1) {
             squares[i].classList.remove('hide')
             squares[i].classList.add('background_color')
         } else if (layout[i] === 2){
             //squares[i].style.backgroundColor = colorList.value
             squares[i].classList.add('green')
-            console.log(squares[i])
+            //console.log(squares[i])
         } else if (layout[i] === 3){
             squares[i].classList.remove('hide')
-            squares[i].classList.add('skin')
+            squares[i].classList.add('yellow')
         } else if (layout[i] === 0){
-            squares[i].classList.add('hat')  
-        }     
+            squares[i].classList.add('red')  
+        }    
     }
 }
 createBoard()
 
 
 function coloring(e){
-    //console.log(e.target)
+    console.log(e.target)
     if(
-        e.target.classList.contains('hat') ||
-        e.target.classList.contains('skin')||
+        e.target.classList.contains('red') ||
+        e.target.classList.contains('yellow')||
         e.target.classList.contains('green')
     ){
         e.target.classList.remove('hide')
@@ -110,9 +109,17 @@ function coloring(e){
         let randomEmoji = Math.floor(Math.random() * xmasEmoji.length);
         e.target.textContent = xmasEmoji[randomEmoji];
     }
+    // while(!e.target.classList.contains('hide')){
+    //     alert('merry xmas') 
+    // }
 }
-// function merryxmas(){
-//     alert('merry xmas')
+// function merryxmas(e){
+//     console.log(e.target)
+//     while(!e.target.classList.contains('hide')){
+//         alert('merry xmas') 
+//     }
 // }
+//let sequence = coloring(merryxmas)
 document.addEventListener('mouseover', coloring)
+//document.addEventListener('change', merryxmas)
 //setTimeout(merryxmas, 1000)
