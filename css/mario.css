@@ -87,17 +87,17 @@ h5:hover{
 }
 @media screen and (min-width: 800px) and (max-width: 1200px){
     .grid {
-        width: 800px;
-        height: 800px;
+        width: 750px;
+        height: 750px;
     }
 
     .grid div {
-        width:  40px;
-        height: 40px;  
+        width:  37.5px;
+        height: 37.5px;  
     }
 }
 
-@media screen and (min-width: 600px) and (max-width: 1000px){
+@media screen and (min-width: 700px) and (max-width: 1000px){
     .grid {
         width: 500px;
         height: 500px;
@@ -109,7 +109,7 @@ h5:hover{
     }
 }
 
-@media screen and (max-width:700px){
+@media screen and (max-width:750px){
    
     .grid {
         width: 350px;
