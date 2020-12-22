@@ -66,8 +66,9 @@ h5:hover{
 }
 .hint{
     font-weight: 900;
-    animation:hint .75s 5;
-    font-size: 3rem;
+    animation:hint 1s 5;
+    /* font-size: 3rem; */
+    color: transparent;
 }
 @keyframes hint{
     from, to { color: transparent }
@@ -132,7 +133,7 @@ h5:hover{
     p{
         margin-left: 3rem;
     }
-    .hint{
+    /* .hint{
         display: none;
-    }
+    } */
 }
