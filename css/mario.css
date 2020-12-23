@@ -64,15 +64,20 @@ h5:hover{
     transition: .3s ease-out;
     transform: scale(1.1);
 }
-.hint{
+.hintBg{
     font-weight: 900;
     animation:hint 1s 5;
-    /* font-size: 3rem; */
+    font-size: 3rem;
     color: transparent;
+    margin: -10px;
+    padding: 0;
 }
 @keyframes hint{
     from, to { color: transparent }
     50% { color: red; }
+}
+.hintSm{
+    display: none;
 }
 @media screen and (min-width: 1200px){
     .grid {
@@ -133,7 +138,18 @@ h5:hover{
     p{
         margin-left: 3rem;
     }
-    /* .hint{
+    .hintBg{
         display: none;
-    } */
+    }
+    .hintSm{
+        font-weight: 900;
+        animation:hint 1s 5;
+        /* font-size: 3rem; */
+        /* color: transparent; */
+        display: block;
+    }
+    @keyframes hint{
+        from, to { color: transparent }
+        50% { color: red; }
+    }
 }
