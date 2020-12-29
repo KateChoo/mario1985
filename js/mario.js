@@ -33,13 +33,13 @@ const layout = [
 ]
 
 const xmasEmoji = [
-    '🎅', '❄️', '🎁', '🦌', '⛄', '🎄','Merry', 'Xmas'
+    '🎅', '❄️', '🎁', '🦌', '⛄', '🎄','Happy', 'New', 'Year'
 ]
 
-const xmasBlessing = [
-    //'url(https://cdn.pixabay.com/photo/2020/11/23/03/55/snowflakes-5768630_1280.jpg)',
-    'Merry Xmas', '', '', '', '', '', '', '','Happy', '', '', '', '', '', '', '', '','2021'
-]
+// const xmasBlessing = [
+//     //'url(https://cdn.pixabay.com/photo/2020/11/23/03/55/snowflakes-5768630_1280.jpg)',
+//     'Merry Xmas', '', '', '', '', '', '', '','Happy', '', '', '', '', '', '', '', '','2021'
+// ]
 
 function createBoard() { 
     for (let i = 0; i < layout.length; i++) {
