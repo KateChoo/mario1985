@@ -1,5 +1,5 @@
 const width = 10
-const grid = document.querySelector('.grid')
+const xmas2020k = document.querySelector('.xmas2020k')
 let squares = []
 
 // 0 - blue
@@ -44,7 +44,7 @@ const xmasEmoji = [
 function createBoard() {
     for (let i = 0; i < layout.length; i++) {
         const square = document.createElement('div')
-        grid.appendChild(square)
+        xmas2020k.appendChild(square)
         squares.push(square)
 
         if (layout[i] === 1) {

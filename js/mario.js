@@ -1,5 +1,5 @@
 const width = 10
-const grid = document.querySelector('.grid')
+const xmas2020k = document.querySelector('.xmas2020k')
 //const scoreDisplay = document.getElementById('score')
 let squares = []
 
@@ -21,7 +21,7 @@ const layout = [
 1, 1, 4, 4, 2, 2, 2, 2, 0, 2, 2, 0, 2, 2, 2, 4, 4, 4, 1, 1, 
 1, 1, 4, 2, 2, 2, 2, 2, 0, 0, 0, 0, 2, 2, 2, 2, 4, 4, 1, 1,  
 1, 1, 4, 3, 3, 3, 2, 0, 3, 0, 0, 3, 0, 2, 3, 3, 4, 4, 1, 1,  
-1, 1, 4, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 3, 3, 3, 4, 4, 1, 1,  
+1, 1, 4, 3, 3, 3, 3, 0, 0, 0, 5, 0, 0, 3, 3, 3, 4, 4, 1, 1,  
 1, 1, 4, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 4, 4, 1, 1,  
 1, 1, 4, 4, 4, 0, 0, 0, 0, 4, 0, 0, 0, 0, 4, 4, 4, 4, 1, 1,  
 1, 1, 4, 4, 2, 2, 2, 2, 4, 4, 4, 2, 2, 2, 2, 4, 4, 4, 1, 1,
@@ -45,7 +45,7 @@ function createBoard() {
     for (let i = 0; i < layout.length; i++) {
         const square = document.createElement('div')
         square.classList.add('hide')
-        grid.appendChild(square)
+        xmas2020k.appendChild(square)
         squares.push(square)
 
         if (layout[i] === 1) {
@@ -58,7 +58,14 @@ function createBoard() {
             squares[i].classList.add('yellow')
         } else if (layout[i] === 0){
             squares[i].classList.add('red')  
-        }     
+        } else if (layout[i] === 5){
+            squares[i].classList.add('red')
+            squares[i].textContent = "K" 
+            squares[i].style.fontSize = '1.5rem';
+            squares[i].style.cursor = 'pointer';
+            squares[i].setAttribute("target", "_blank");
+            squares[i].setAttribute("href", "mailto:twodoor1993@gmail.com");
+        }   
     }
 }
 createBoard()

@@ -1,5 +1,5 @@
 const width = 10
-const grid = document.querySelector('.grid')
+const xmas2020k = document.querySelector('.xmas2020k')
 //const scoreDisplay = document.getElementById('score')
 let squares = []
 const colorList = document.querySelector('#colorList')
@@ -75,7 +75,7 @@ function createBoard() {
     for (let i = 0; i < layout.length; i++) {
         const square = document.createElement('div')
         square.classList.add('hide')
-        grid.appendChild(square)
+        xmas2020k.appendChild(square)
         squares.push(square)
         if (layout[i] === 1) {
             squares[i].classList.remove('hide')
